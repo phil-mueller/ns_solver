@@ -1,0 +1,65 @@
+***Part 1***
+---------------------------------------------------------------------------------------------------------------------------------
+How to built the matrix operators Dx, Dy and L? Finite Volume discretization?
+Can we reuse the finite volume stencils that we build for the diffusion equation?
+
+-For the Dx and Dy Operators, they should be done from scratch like in the Finite Volume session
+-Have a look at page 47 in the script for the first order derivatives (greens theorem)
+-The lapacian operator is more difficult but is already given from sessions 4-6 --> we call the matrix L instead of A
+-In the old finite volume scheme we used T but the name of the variable does not matter, we can use the same matrix for u,v and p
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Boundary conditions for velocity at the walls, in the document Veronika_Rohan.pdf it states du/dy = 0 but does that mean no wall 
+shear stress tau? dp/dy = 0 is obvious from boundary layer theory, but shouldn't velocity be only Dirichlet?
+
+-This was only some simplification for modeling walls, forget about it. Stick to the Navier Stokes report
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+How are boundary conditions incorporated in to the algorithm. For Neumann BC it easy, they
+are implemented into the differencial operator matrices Dx Dy and L but what about Dirichlet?
+It is hard to see what happes to the BC during the calculations (show flowchart)
+
+-This question is still to be answered, but we will come back later 
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+If we achieve 2D Channel flow (Poiseuille), how do we integrate obstacles? Also, if the domain
+is not rectangular (like in the example report), how to build the matrices/vectors
+Dx,Dy,L,u,v,p etc. in a structured way (or is an unstructured mesh the solution?)
+
+-The simplest method is to build the obstacle as a kind of "hill". This way, the simple structured mesh can be used
+-Start with hill method first! If there is more time, we can think about some more complicated implementations
+-More complicated: include new boundary conditions (more corners) but attention this includes messing the the discretization
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Do we need to include Rhie-Chow correction?
+
+-Rie-Chow is necessary for Re > 100, in our case we should start with around Re=50-60
+-It is nice to have, but only if there is time in the end
+-Start without Rhie-Chow because it introduces more error sources
+---------------------------------------------------------------------------------------------------------------------------------
+
+***Part 2***
+---------------------------------------------------------------------------------------------------------------------------------
+How do we apply boundary conditions for u,v and p in the Dx/Dy matrices if the matrices are independend of the parameter but we
+we may have different boundary conditions depending on the parameter? Are BC for the gradients necessary for all sides?
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Why is there currently (in the flow-chart) only one loop but there should be two (time and convergence). Why is there time in 
+the equation anyway, shouldn't we work with steady state flow?
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
