@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------
-Thermo Fluid Dynamics Pracitcal Course 2020/2021 - Matlab Code
+Thermo-Fluid Dynamics Practical Course 2020/2021 - Matlab Code
 
 The purpose of this project is the development a Navier Stokes solver. The domain of interest is a channel flow with an 
 obstacle. The 2D laminar Navier Stokes equations are discretized in time (standard predictor-corrector scheme) and in space 
