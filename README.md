@@ -7,4 +7,4 @@ this mesh type, the Rhie and Chow interpolation is implemented. Obstacles of var
 wall. The solver results were validate against literature data for channel flow up to a Reynolds number of Re=250.
 
 Note:
-Project is finished. Please refer to the final report for any further information.
+Project is finished. Please refer to the final report (report.pdf) for any further information.
